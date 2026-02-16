@@ -1,36 +1,41 @@
-export function buildPrompt(character: any, storyType: string) {
+export function buildPrompt(characters: any[], genre: string, location: string) {
   return `
-black and white manga panel,
-emotional storytelling,
-character named ${character.name},
-${character.personality},
+professional black and white japanese manga illustration,
+high contrast ink,
+dramatic cinematic lighting,
+clean ink lineart
 
-three-panel horizontal manga layout with clear panel borders,
+Location:
+${location}
 
-main character based on the reference image,
-keep same hairstyle, face shape and outfit,
+Characters:
+${characters.map((c, i) => `
+Character ${i + 1}:
+name: ${c.name}
+personality: ${c.personality}
+character identity inspired by reference image ${i + 1}
+`).join("")}
 
-strong leader personality,
-cold and serious expression,
-confident posture,
+preserve face, hairstyle and outfit style only
+allow dynamic body poses and gestures
+do not copy original pose
 
-panel 1: character looking forward with speech bubble "We move now."
-panel 2: close-up face with speech bubble "Stay focused."
-panel 3: dramatic pose with speech bubble "Victory is certain."
+Three panel horizontal manga layout with clear borders
 
-black and white manga style,
-high contrast ink lines,
-professional manga illustration,
-dramatic lighting,
-clean lineart,
-classic Japanese manga framing
-cinematic angles,
-dynamic composition
-same character across all panels
-no extra characters,
-no color,
-no blurry faces,
-no distorted hands,
+Genre mood:
+${genre}
+
+panel 1: both characters visible, wide establishing shot
+panel 2: emotional close-up on main character
+panel 3: cinematic pose with both characters
+
+speech bubbles present but empty
+
+same characters across all panels
+no redesign
+no color
 no realistic style
+no pose cloning
+no distorted hands
 `;
 }
