@@ -34,34 +34,31 @@ export default function Home() {
 
 
   return (
-    <div className="flex flex-row p-8 gap-8 bg-slate-50 min-h-screen">
+    <div className="flex flex-col md:flex-row p-8 gap-8 bg-slate-50 min-h-screen">
 
       {/* LEFT */}
       <div className="flex-[2] space-y-4">
-<div className="space-y-2">
+        <div className="space-y-2">
 
-  <h1 className="text-4xl font-semibold tracking-tight text-slate-800">
-    Create your own manga scene
-  </h1>
+          <h1 className="text-4xl font-semibold tracking-tight text-slate-800">
+            Create your own manga scene
+          </h1>
 
-  <p className="text-slate-500 w-full leading-relaxed">
-    Choose up to <span className="font-medium text-slate-700">4 characters </span>
-    from different styles and create a manga panel.
-    You can explore more characters using pagination below.
-  </p>
+          <p className="text-slate-500 w-full leading-relaxed">
+            Choose up to <span className="font-medium text-slate-700">4 characters </span>
+            from different styles and create a manga panel.
+            You can explore more characters using pagination below.
+          </p>
 
-  <div className="flex items-center gap-2 text-sm text-slate-400">
-    <span>Mixed character styles</span>
-    <span>•</span>
-    <span>Multiple pages</span>
-    <span>•</span>
-    <span>AI generated scenes</span>
-  </div>
+          <div className="flex items-center gap-2 text-sm text-slate-400">
+            <span>Mixed character styles</span>
+            <span>•</span>
+            <span>Multiple pages</span>
+            <span>•</span>
+            <span>AI generated scenes</span>
+          </div>
 
-</div>
-
-
-
+        </div>
         <CharacterGrid
           characters={characters}
           selectedCharacters={selectedCharacters}
@@ -116,7 +113,7 @@ export default function Home() {
         </div>
 
         {/* Generate Button */}
-        <GenerateButton selectedCharacters={selectedCharacters} setImage={setImage} setLoading={setLoading} genre={genre} location={location}/>
+        <GenerateButton selectedCharacters={selectedCharacters} setImage={setImage} setLoading={setLoading} genre={genre} location={location} />
 
         {loading && (
           <p className="text-sm text-slate-500 animate-pulse">
@@ -124,7 +121,7 @@ export default function Home() {
           </p>
         )}
 
-        <MangaResult image={image}/>
+        <MangaResult image={image} />
       </div>
     </div>
   );
